@@ -54,7 +54,7 @@ def _updating_words(_from_file, _to_path):
     for word in from_words:
         if len(word) > 7:
             _to_file = f"{_to_path}/{word[0]}.txt"
-            # to_words = _reading_file(f'webcraping/files/{word[0]}.txt')
+            # to_words = _reading_file(f'files/{word[0]}.txt')
             to_words = _reading_file(_to_file)
             if len(to_words) > 1:
                 pass
