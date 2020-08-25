@@ -266,6 +266,64 @@ def _find_words(_from_path):
         print('-'*130)
 
 
+def _checking_words(_from_file, _url, _tag):
+    from_words = _reading_file(_from_file)
+    if len(from_words) > 1:
+        pass
+    else:
+        exit()
+    present = []
+    not_present = []
+    total_words = len(from_words)
+    count = 1
+
+    print('File Checking Started', _from_file)
+    for word in from_words:
+        # url = f'https://www.dictionary.com/browse/{word}'
+        url = _url + f'/{word}'
+        # find_tag = 'h1'
+        find_tag = _tag
+        tag = _add_data_from_web(url, find_tag)
+        if count == 5:
+            break
+        if tag != None:
+            tag = tag.text.strip()
+            tag = str(tag).lower()
+            if word == tag:
+                present.append(tag)
+                print(f'[{count} out of {total_words}] ==> Present')
+            else:
+                present.append(word)
+                present.append(tag)
+                print(f'[{count} out of {total_words}] ==> Present')
+        else:
+            not_present.append(word)
+            print(f'[{count} out of {total_words}] ==> Not Present -----> {word}')
+        count += 1
+    print('File Checked Successfully', _from_file)
+    return [present, not_present]
+
+
+def _save_checked_words(_to_path, _present, _not_present):
+    path, present, not_present = _to_path, _present, _not_present
+
+    print(path, 'Now Creating New Files')
+
+    print('Adding Present words in Present file', path)
+    for pre in present:
+        fpre = open(f'{path}/present/{pre[0]}.txt', 'a')
+        fpre.write(' ' + pre + ' ')
+        fpre.close()
+    print('Done Adding Present words')
+    print('Adding Not present words in Not present file', path)
+    for no in not_present:
+        fnp = open(f'{path}/not_present/{no[0]}.txt', 'a')
+        fnp.write(' ' + no + ' ')
+        fnp.close()
+    print('Done Adding Not Present words')
+    print('Done Successfully File Checking and Saving', path)
+
+
 def _get_position():
     key_dict = {}
     while True:
