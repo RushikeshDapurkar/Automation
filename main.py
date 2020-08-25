@@ -14,10 +14,10 @@ files = os.listdir('files')
 '''Removing Dupicates, Sorting, Updating New Words From 
  Multiple Files Present In Particular Folder-------------------------'''
 
-# for f in files:
-#     results = File_Updater._removing_duplicates(
-#         f'files/{f}')
-#     print(results)
+for f in files:
+    results = File_Updater._removing_duplicates(
+        f'files/{f}')
+    print(results)
 #     results = File_Updater._sorting_words_leng(
 #         f'files/{f}')
 #     print(results)
@@ -34,11 +34,11 @@ files = os.listdir('files')
 
 '''Checking New words in file-----------------------------------------'''
 
-for f in files:
-    url = f'https://www.dictionary.com/browse'
-    tag = 'h1'
-    from_file = 'files/' + f
-    to_path = 'backup'
-    results = File_Updater._checking_words(from_file, url, tag)
-    present, not_present = results[0], results[1]
-    File_Updater._save_checked_words(to_path, present, not_present)
+# for f in files:
+#     url = f'https://www.dictionary.com/browse'
+#     tag = 'h1'
+#     from_file = 'files/' + f
+#     to_path = 'backup'
+#     results = File_Updater._checking_words(from_file, url, tag)
+#     present, not_present = results[0], results[1]
+#     File_Updater._save_checked_words(to_path, present, not_present)

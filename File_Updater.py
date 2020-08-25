@@ -38,7 +38,7 @@ def _create_new(_from_file, _to_path):
         _to_file = f"{_to_path}/{word[0]}.txt"
 
         file1 = open(_to_file, "a")  # append mode
-        file1.write(word+' ')
+        file1.write(word+'\n')
         file1.close()
     return f'Done Adding'
 
@@ -63,7 +63,7 @@ def _updating_words(_from_file, _to_path):
                 exit()
             if word not in to_words:
                 fw = open(_to_file, 'a')
-                fw.write(' '+word+' ')
+                fw.write('\n'+word+'\n')
                 fw.close()
         else:
             break
@@ -87,11 +87,11 @@ def _removing_duplicates(_from_file, _to_path=None):
             word = word.lower()
             if _to_path != None:
                 fw = open(f'{_to_path}/{word[0]}.txt', 'a')
-                fw.write(word+' ')
+                fw.write(word+'\n')
                 fw.close()
             else:
                 fw = open(f'{_from_file}', 'a')
-                fw.write(word+' ')
+                fw.write(word+'\n')
                 fw.close()
         else:
             break
@@ -117,11 +117,11 @@ def _filtering_words(_from_file, _to_path=None):
                 except Exception:
                     word = word
                 fw = open(f'{_to_path}/{word[0]}.txt', 'a')
-                fw.write(word+' ')
+                fw.write(word+'\n')
                 fw.close()
             else:
                 fw = open(f'{_from_file}', 'a')
-                fw.write(word+' ')
+                fw.write(word+'\n')
                 fw.close()
         else:
             break
@@ -145,11 +145,11 @@ def _sorting_words_leng(_from_file, _to_path=None):
         if len(word) > 7:
             if _to_path != None:
                 fw = open(f'{_to_path}/{word[0]}.txt', 'a')
-                fw.write(word+' ')
+                fw.write(word+'\n')
                 fw.close()
             else:
                 fw = open(f'{_from_file}', 'a')
-                fw.write(word+' ')
+                fw.write(word+'\n')
                 fw.close()
         else:
             break
@@ -312,13 +312,13 @@ def _save_checked_words(_to_path, _present, _not_present):
     print('Adding Present words in Present file', path)
     for pre in present:
         fpre = open(f'{path}/present/{pre[0]}.txt', 'a')
-        fpre.write(' ' + pre + ' ')
+        fpre.write('\n' + pre + '\n')
         fpre.close()
     print('Done Adding Present words')
     print('Adding Not present words in Not present file', path)
     for no in not_present:
         fnp = open(f'{path}/not_present/{no[0]}.txt', 'a')
-        fnp.write(' ' + no + ' ')
+        fnp.write('\n' + no + '\n')
         fnp.close()
     print('Done Adding Not Present words')
     print('Done Successfully File Checking and Saving', path)
