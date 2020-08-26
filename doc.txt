@@ -1,0 +1,29 @@
+1. _reading_file(_file):
+                          
+2. _emptying_file(_file_path):
+
+3. _create_new(_from_file, _to_path):
+
+4. _updating_words(_from_file, _to_path):
+
+5. _removing_duplicates(_from_file, _to_path=None):
+
+6. _filtering_words(_from_file, _to_path=None):
+
+7. _sorting_words_leng(_from_file, _to_path=None):
+
+8. _get_words_list(_from_path, _words_list, _used_list=None, _delete_list=None):
+
+9. _validate_command(_cmd, _optn_list, _used_list, _delete_list):
+
+10. _find_words(_from_path):
+
+11. _checking_words(_from_file, _url, _tag):
+
+12. _save_checked_words(_to_path, _present, _not_present):
+
+13. _get_position():
+
+14. __mouse_clicker(_list_pos, _sleep_for=None):
+
+15. _add_data_from_web(_url, _find):
