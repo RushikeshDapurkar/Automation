@@ -1,4 +1,6 @@
 1. _reading_file(_file):
+
+Just pass the file path to read and returns the list of words in that particular file.
                           
 2. _emptying_file(_file_path):
 
